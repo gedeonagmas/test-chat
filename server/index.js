@@ -13,7 +13,7 @@ const io = socketio(server);
 
 app.use(
   cors({
-    origin: ["https://chat-app-client-dun.vercel.app"],
+    origin: ["https://test-chat-g5f5-f4chst5cu-gedeonagmas.vercel.app"],
     methods: ["POST", "GET", "PATCH", "DELETE", "PUT"],
     credentials: true,
   })
