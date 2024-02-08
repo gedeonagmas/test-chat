@@ -23,7 +23,13 @@ const Chat = ({ location }) => {
   useEffect(() => {
     const { name, room } = queryString.parse(location.search);
 
-    socket = io(ENDPOINT);
+    socket = io(ENDPOINT, {
+      // Send auth token on connection, you will need to DI the Auth service above
+      // 'query': 'token=' + Auth.getToken()
+      path: "/socket.io",
+      transports: ["websocket"],
+      secure: true,
+    });
 
     setRoom(room);
     setName(name);

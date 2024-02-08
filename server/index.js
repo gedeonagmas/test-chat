@@ -9,7 +9,13 @@ const router = require("./router");
 
 const app = express();
 const server = http.createServer(app);
-const io = socketio(server);
+const io = socketio(server, {
+  // Send auth token on connection, you will need to DI the Auth service above
+  // 'query': 'token=' + Auth.getToken()
+  path: "/socket.io",
+  transports: ["websocket"],
+  secure: true,
+});
 
 app.use(
   cors({
