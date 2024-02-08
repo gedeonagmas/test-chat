@@ -24,7 +24,7 @@ const Chat = ({ location }) => {
     const { name, room } = queryString.parse(location.search);
 
     socket = io(ENDPOINT, {
-      withCredentials: true,
+      // withCredentials: true,
       // Send auth token on connection, you will need to DI the Auth service above
       // 'query': 'token=' + Auth.getToken()
       // path: "/socket.io",
