@@ -26,9 +26,9 @@ const Chat = ({ location }) => {
     socket = io(ENDPOINT, {
       // Send auth token on connection, you will need to DI the Auth service above
       // 'query': 'token=' + Auth.getToken()
-      path: "/socket.io",
-      transports: ["websocket"],
-      secure: true,
+      // path: "/socket.io",
+      transports: ["websocket", "polling"],
+      // secure: true,
     });
 
     setRoom(room);
